@@ -5,7 +5,9 @@
 #include "Sprite.cpp"
 #include "CameraSystem.h"
 #include "MoveSystem.h"
+#include "InputSystem.h"
 #include "SystemManager.cpp"
+
 //#include<iostream>
 //#include<list>
 #include "Velocity.cpp"

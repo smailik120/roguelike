@@ -15,7 +15,7 @@ void CameraSystem::update()
                     Sprite *sprite=static_cast<Sprite *>(((&(*it))->getComponent("sprite")));
                     const char  *c=sprite->getTexture();
                     printw(c);
-                    refresh();
+                    //refresh();
                 }
         }
     
