@@ -3,6 +3,8 @@
         "cstring": "cpp",
         "iostream": "cpp",
         "list": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "map": "cpp",
+        "tuple": "cpp"
     }
 }

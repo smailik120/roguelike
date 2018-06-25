@@ -23,40 +23,56 @@ int main(int argc,char *argv[])
     Engine engine;
         while(true)
         {
-              int ch=getch();
+            
+            //refresh();
+            engine.update();
+            refresh();
+            int ch=getch();
+            
+            
             list<Entity> *entities=&Engine::getCurrentScene()->getEntities();
             if(ch==119)
             {
-                list<Entity> *entities=&Engine::getCurrentScene()->getEntities();
+                
                 Position *pos=static_cast<Position *>((entities->back()).getComponent("position"));
                 Velocity *vel=static_cast<Velocity *>((entities->back()).getComponent("velocity"));
-                pos->setX(pos->getX()-vel->getSpeed()); 
+ 
+                vel->setSpeedY(0);
+                vel->setSpeedX(-1);
+                pos->setX(pos->getX()+vel->getSpeedX());
             }
             else if(ch==97)
             {
-                 list<Entity> *entities=&Engine::getCurrentScene()->getEntities();
+                
                 Position *pos=static_cast<Position *>((entities->back()).getComponent("position"));
                 Velocity *vel=static_cast<Velocity *>((entities->back()).getComponent("velocity"));
-                pos->setY(pos->getY()-vel->getSpeed()); 
+                
+                vel->setSpeedY(-1);
+                vel->setSpeedX(0);
+                pos->setY(pos->getY()+vel->getSpeedY()); 
             }
             else if(ch==115)
             {
-                list<Entity> *entities=&Engine::getCurrentScene()->getEntities();
+                
                 Position *pos=static_cast<Position *>((entities->back()).getComponent("position"));
                 Velocity *vel=static_cast<Velocity *>((entities->back()).getComponent("velocity"));
-                pos->setX(pos->getX()+vel->getSpeed()); 
+                
+                vel->setSpeedY(0);
+                vel->setSpeedX(1);
+                pos->setX(pos->getX()+vel->getSpeedX()); 
             }
             else if(ch==100)
             {
-                 list<Entity> *entities=&Engine::getCurrentScene()->getEntities();
+                 
                 Position *pos=static_cast<Position *>((entities->back()).getComponent("position"));
                 Velocity *vel=static_cast<Velocity *>((entities->back()).getComponent("velocity"));
-                pos->setY(pos->getY()+vel->getSpeed()); 
+                vel->setSpeedY(1);
+                vel->setSpeedX(0);
+                pos->setY(pos->getY()+vel->getSpeedY()); 
             }
+            
             //cout<<ch<<" ";
             clear();
-            refresh();
-            engine.update();
             //printw("2");
             //cout<<pos->getX()<<" ";   
             

@@ -3,25 +3,35 @@
 #define _VELOCITY_CPP
 class Velocity :public Component{
 private:
-int speed;
+int speedx;
+int speedy;
 int a;
 public: 
-	Velocity(int speed,int a)
+	Velocity(int speedx,int speedy,int a)
 	{
-		this->speed=speed;
+		this->speedx=speedx;
+		this->speedy=speedy;
 		this->a=a;
 	}
-	void setSpeed(int speed)
+	void setSpeedX(int speed)
 	{
-		this->speed=speed;
+		this->speedx=speed;
+	}
+	void setSpeedY(int speed)
+	{
+		this->speedy=speed;
 	}
 	void setA(int a)
 	{
 		this->a=a;
 	}
-	int getSpeed()
+	int getSpeedX()
 	{
-	return speed;
+	return speedx;
+	}
+	int getSpeedY()
+	{
+		return speedy;
 	}
 };
 #endif	
