@@ -10,6 +10,7 @@
 #include "MoveSystem.cpp"
 #include "CameraSystem.cpp"
 #include "InputSystem.cpp"
+#include <unistd.h>
 using namespace std;
 
 int main(int argc,char *argv[])
@@ -19,18 +20,22 @@ int main(int argc,char *argv[])
     //scrollok( stdscr, true );
     keypad(stdscr, true);   //Включаем режим чтения функциональных клавиш
     noecho();               //Выключаем отображение вводимых символов, нужно для getch()
-    halfdelay(100);         //Устанавливаем ограничение по времени ожидания getch() в 10 сек
+    halfdelay(10);         //Устанавливаем ограничение по времени ожидания getch() в 10 сек
+
     Engine engine;
+    list<Entity> *entities=&Engine::getCurrentScene()->getEntities();
+
         while(true)
         {
-            
+            sleep(0.1);
             //refresh();
             engine.update();
-            refresh();
+            //refresh();
             int ch=getch();
             
             
-            list<Entity> *entities=&Engine::getCurrentScene()->getEntities();
+            
+            
             if(ch==119)
             {
                 
@@ -75,9 +80,10 @@ int main(int argc,char *argv[])
             clear();
             //printw("2");
             //cout<<pos->getX()<<" ";   
-            
+            }
             i++;
-        }
+
+        
         getch();
         endwin();
         

@@ -12,7 +12,7 @@
     {
         
         list<Entity> *entities=&Engine::getCurrentScene()->getEntities();
-         
+        list<Entity> *velocityEntities=&Engine::getCurrentScene()->getVelocityEntities();
         
        // int ch=getch();
        // if(ch==119)
@@ -22,16 +22,21 @@
        //    pos->setY(pos->getY()+vel->getSpeed()); 
        // }
      
-    
-        for(list<Entity>:: iterator it=entities->begin();it!=entities->end();it++)
+        
+
+        for(list<Entity>:: iterator it=velocityEntities->begin();it!=velocityEntities->end();it++)
         {
+        
         for(list<Entity>:: iterator it1=entities->begin();it1!=entities->end();it1++)
         {
+            
+            
                if(validate(&(*it)) && validate(&(*it1)))
                {
                    
                    string name=it->getName();
                    string name1=it1->getName();
+                   
                    if(m[pair<string,string>(name,name1)]!=0  )
                    {
                        Position *pos=static_cast<Position *>((&(*it))->getComponent("position"));
@@ -43,8 +48,7 @@
                        }
                        //CollisionPlayerBrick *col=static_cast<Collision *>(m[pair<string,string>(name,name1)]);
                        //Collm[pair<string,string>(name,"brick")]->Action(&(*it),&(*it1));
-                       break;
-                       break;
+                       
                    }
                    //cout<<m[pair<string,string>(name,"brick")];
                    //CollisionPlayerBrick *pos=static_cast<Collision *>(m[pair<string,string>(name,name1)]);
@@ -52,8 +56,12 @@
                     //Velocity *vel=static_cast<Velocity *>((&(*it))->getComponent("velocity"));
                     //pos->setX(pos->getX()+vel->getSpeed());
                }
+
+            
             }
+            
         }
+        
     
     }
     bool MoveSystem::validate(Entity *entity)

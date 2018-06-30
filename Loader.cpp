@@ -7,9 +7,9 @@ SystemManager & Loader::manager(){
     systemManager=new SystemManager();
     MoveSystem *move=new MoveSystem;
     CameraSystem *camera=new CameraSystem;
-    systemManager->addSystem(camera,2);
-    systemManager->addSystem(move,1);
-    systemManager->addSystem(new InputSystem,0);
+    systemManager->addSystem(camera,1);
+    systemManager->addSystem(move,0);
+   // systemManager->addSystem(new InputSystem,0);
     return *systemManager;
 }
 
@@ -36,9 +36,9 @@ SystemManager & Loader::manager(){
         entity.setName("player");
         p->push_back(entity);
         
-        for(int i=0;i<5;i++)
+        for(int i=0;i<20;i++)
         {
-            for(int j=0;j<5;j++)
+            for(int j=0;j<20;j++)
             {
                 Entity entity;
                 entity.add("position",new Position(i,j));
@@ -47,11 +47,25 @@ SystemManager & Loader::manager(){
                 p->push_front(entity);
             }
         }
-        Entity brick;
-        brick.setName("brick");
-        brick.add("position",posBrick);
-        brick.add("sprite",spriteBrick);
-        p->push_front(brick);
+        
+       /*
+        for(int i=1;i<=50;i++)
+        {
+            for(int j=1;j<=50;j++)
+            {
+                Entity entity;
+                entity.add("position",new Position(i,j));
+                entity.add("sprite",spriteBrick);
+                entity.setName("brick");
+                p->push_front(entity);
+            }
+        }
+        */
+        //Entity brick;
+       // brick.setName("brick");
+        //brick.add("position",posBrick);
+       // brick.add("sprite",spriteBrick);
+       // p->push_front(brick);
         
         Scene scene(*p);
         scenes->push_front(scene);

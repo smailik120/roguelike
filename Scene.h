@@ -10,6 +10,7 @@ class Scene {
 private:
     //SystemManager *systemManager;
     list<Entity> *entities;
+    list<Entity> *velocityEntities;
 public: 
 
         Scene(list<Entity> &entitie);
@@ -24,5 +25,6 @@ public:
     void update(SystemManager *systemManager);
 
     list<Entity> &getEntities();
+    list<Entity> &getVelocityEntities();
 };
 #endif
