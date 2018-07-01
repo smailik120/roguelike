@@ -4,7 +4,7 @@
 #include<list>
 #include<iterator>
 #include "Scene.h"
-#include "Loader.h"
+#include "LoaderOfFile.h"
 #include "SystemManager.cpp"
 class Engine {
 private:

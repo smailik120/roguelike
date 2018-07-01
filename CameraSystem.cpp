@@ -12,9 +12,11 @@ void CameraSystem::update()
                {
                     Position *pos=static_cast<Position *>((&(*it))->getComponent("position"));
                     move(pos->getX(),pos->getY());
-                    Sprite *sprite=static_cast<Sprite *>(((&(*it))->getComponent("sprite")));
-                    const char  *c=sprite->getTexture();
-                    printw(c);
+                    
+                    Sprite *sprite=static_cast<Sprite *>(((&(*it))->getComponent("sprite")));               
+                   // cout<<c;
+                  // const char *image=&sprite->getTexture();
+                   addch(sprite->getTexture());
                     //refresh();
                 }
         }

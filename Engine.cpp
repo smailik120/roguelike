@@ -2,7 +2,7 @@
 
 Engine::Engine()
     {
-        Loader l;
+        LoaderOfFile l;
         scenes=&l.load("sosok");
         manager=&l.manager();
         list<Scene>::iterator it=scenes->begin();

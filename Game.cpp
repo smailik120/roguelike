@@ -4,7 +4,7 @@
 #include "Position.cpp"
 #include<ncurses.h>
 #include "Entity.cpp"
-#include "Loader.cpp"
+#include "LoaderOfFile.cpp"
 #include "Engine.cpp"
 #include "Scene.cpp"
 #include "MoveSystem.cpp"
@@ -23,18 +23,18 @@ int main(int argc,char *argv[])
     halfdelay(10);         //Устанавливаем ограничение по времени ожидания getch() в 10 сек
 
     Engine engine;
+    //player последний в списке
     list<Entity> *entities=&Engine::getCurrentScene()->getEntities();
 
         while(true)
         {
             sleep(0.1);
-            //refresh();
+            
             engine.update();
-            //refresh();
+            
+            refresh();
+            
             int ch=getch();
-            
-            
-            
             
             if(ch==119)
             {
@@ -46,6 +46,7 @@ int main(int argc,char *argv[])
                 vel->setSpeedX(-1);
                 pos->setX(pos->getX()+vel->getSpeedX());
             }
+            
             else if(ch==97)
             {
                 
@@ -77,11 +78,14 @@ int main(int argc,char *argv[])
             }
             
             //cout<<ch<<" ";
+            
             clear();
             //printw("2");
-            //cout<<pos->getX()<<" ";   
+            //cout<<pos->getX()<<" ";  
+          //  i++; 
+            
             }
-            i++;
+            
 
         
         getch();

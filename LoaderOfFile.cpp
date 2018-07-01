@@ -1,21 +1,14 @@
-#include<map>
-#include<iostream>
-#include <fstream>
-#include "Component.cpp"
-#include "Velocity.cpp"
-#include "Entity.cpp"
-#include "CreatePlayer.cpp"
-#include<list>
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <cstdlib>
-using namespace std;
-Entity create(string s)
+#include "LoaderOfFile.h"
+
+
+LoaderOfFile::LoaderOfFile(){
+
+}
+Entity LoaderOfFile::create(string s)
 {
 Entity entity;
 
-if(s.find("Position"))
+if(s.find("Position")!=-1)
 {
 string start=s.substr(s.find("Position")+10);
 int posEnd=start.find(")");
@@ -27,7 +20,7 @@ float y = ::strtod(posY.c_str(), 0);
 Position *position=new Position(x,y);
 entity.add("position",position);
 }
-if(s.find("Velocity"))
+if(s.find("Velocity")!=-1)
 {
 string start=s.substr(s.find("Velocity")+10);
 int posEnd=start.find(")");
@@ -42,18 +35,17 @@ float a = ::strtod(speedA.c_str(), 0);
 Velocity *velocity=new Velocity(x,y,a);
 entity.add("velocity",velocity);
 }
-if(s.find("Sprite"))
+if(s.find("Sprite")!=-1)
 {
+ 
 string start=s.substr(s.find("Sprite")+8);
 int spriteEnd=start.find(")");
 string spriteAll=start.substr(0,spriteEnd);
-const char *image = &spriteAll[0];
-cout<<image;
- Sprite *sprite=new Sprite();
- sprite->setTexture('2');
+Sprite *sprite=new Sprite();
+sprite->setTexture(spriteAll[0]);
 entity.add("sprite",sprite);
 }
-if(s.find("Name"))
+if(s.find("Name")!=-1)
 {
     string tempName=s.substr(s.find("Name")+6);
     entity.setName(tempName.substr(0,tempName.find(")")));
@@ -61,17 +53,35 @@ if(s.find("Name"))
 }
 return entity;
 }
-int main(int argc, char* argv[])
-{
-    list<Entity> *p=new list<Entity>;
+SystemManager & LoaderOfFile::manager(){
+    systemManager=new SystemManager();
+    MoveSystem *move=new MoveSystem;
+    CameraSystem *camera=new CameraSystem;
+    systemManager->addSystem(camera,1);
+    systemManager->addSystem(move,0);
+  //  systemManager->addSystem(new InputSystem,0);
+    return *systemManager;
+}
+
+    list<Scene>  &LoaderOfFile::load(string path)
+    {
+        
+        list<Entity> *p=new list<Entity>;
+        list<Scene> *scenes=new list<Scene>;
+        
     ifstream fin("test.txt"); // создаём объект класса ofstream для записи и связываем его с файлом cppstudio.txt
     string s;
     while(fin>>s){
-    p->push_back(create(s));
+    Entity entity=create(s);
+    p->push_back(entity);
     
     }
-  //  cout<<p->size();
     fin.close(); // закрываем файл
 
-    return 0;
-}
+        
+        Scene scene(*p);
+        scenes->push_front(scene);
+        
+        return *scenes;
+    }
+    

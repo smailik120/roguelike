@@ -3,14 +3,16 @@
 #define _SPRITE_CPP 
 class Sprite:public Component{
 private:
-    const char *texture;
+     char texture;
 public:
-    void setTexture(const char *texture)
+    void setTexture(char Texture)
     {
-        this->texture=texture;
+        texture=Texture;
+        
     }
-    const char *getTexture()
+    const char getTexture()
     {
+        
         return texture;
     }
 };

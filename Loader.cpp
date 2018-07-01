@@ -24,10 +24,10 @@ SystemManager & Loader::manager(){
         Velocity *velocity=new Velocity(1,1,1);
         Sprite *spritePlayer=new Sprite();
         Sprite *spriteBrick=new Sprite();
-        spriteBrick->setTexture("X");
-        spritePlayer->setTexture("@");
+        spriteBrick->setTexture('X');
+        spritePlayer->setTexture('@');
         Sprite *spriteBlock=new Sprite();
-        spriteBlock->setTexture(".");
+        spriteBlock->setTexture('.');
       //  position.setX((float)5);
         //position.setY((float)5);
         entity.add("position",position);
