@@ -1,8 +1,8 @@
-#ifndef _ENTITY_CPP
-#define _ENTITY_CPP 
+#ifndef _ENTITY_H
+#define _ENTITY_H 
 #include<map>
 #include<cstring>
-#include "Component.cpp"
+#include "../Components/Component.cpp"
 #include<iostream>
 #include<iterator>
 using namespace std;

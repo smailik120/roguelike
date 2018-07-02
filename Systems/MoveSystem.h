@@ -1,15 +1,15 @@
 #ifndef _MOVESYSTEM_CPP
 #define _MOVESYSTEM_CPP
-#include "Collision.h"
-#include "CollisionPlayerBrick.cpp"
-#include "CollisionPlayerMoney.cpp"
+#include "../Collisions/Collision.h"
+#include "../Collisions/CollisionPlayerBrick.cpp"
+#include "../Collisions/CollisionPlayerMoney.cpp"
 #include<map>
-#include "Position.cpp"
-#include "Velocity.cpp"
+#include "../Components/Position.cpp"
+#include "../Components/Velocity.cpp"
 #include<list>
-#include "Engine.h"
+#include "../Entity/Engine.h"
 #include "System.cpp"
-#include "Entity.h"
+#include "../Entity/Entity.h"
 #include<iostream>
 #include<cstring>
 using namespace std;

@@ -1,6 +1,6 @@
 #ifndef _SYSTEM_CPP
 #define _SYSTEM_CPP 
-#include "Entity.h"
+#include "../Entity/Entity.h"
 #include<iostream>
 using namespace std;
 class System {  

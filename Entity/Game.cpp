@@ -1,16 +1,16 @@
 #include "Engine.h"
 #include<iostream>
 #include<typeinfo>
-#include "Position.cpp"
+#include "../Components/Position.cpp"
 #include<ncurses.h>
 #include "Entity.cpp"
-#include "LoaderOfFile.cpp"
+#include "../Loader/LoaderOfFile.cpp"
 #include "Engine.cpp"
 #include "Scene.cpp"
-#include "MoveSystem.cpp"
-#include "CameraSystem.cpp"
-#include "InputSystem.cpp"
-#include "DeleteSystem.cpp"
+#include "../Systems/MoveSystem.cpp"
+#include "../Systems/CameraSystem.cpp"
+#include "../Systems/InputSystem.cpp"
+#include "../Systems/DeleteSystem.cpp"
 #include <unistd.h>
 using namespace std;
 

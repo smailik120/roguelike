@@ -4,8 +4,8 @@
 #include<list>
 #include<iterator>
 #include "Scene.h"
-#include "LoaderOfFile.h"
-#include "SystemManager.cpp"
+#include "../Loader/LoaderOfFile.h"
+#include "../Systems/SystemManager.cpp"
 class Engine {
 private:
     SystemManager *manager;

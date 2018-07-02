@@ -1,7 +1,7 @@
 #include "Collision.h"
-#include "Entity.h"
-#include "Position.cpp"
-#include "Score.cpp"
+#include "../Entity/Entity.h"
+#include "../Components/Position.cpp"
+#include "../Components/Score.cpp"
 #ifndef _COLLISIONPLAYEMONEY_CPP
 #define _COLLISIONPLAYERMONEY_CPP
 class CollisionPlayerMoney:public Collision

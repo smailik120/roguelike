@@ -1,10 +1,10 @@
 #ifndef _CAMERASYSTEM_H
 #define _CAMERASYSTEM_H
-#include "Engine.h" 
+#include "../Entity/Engine.h" 
 //#include "System.cpp"
-#include "Camera.cpp"
-#include "Sprite.cpp"
-#include "Position.cpp"
+#include "../Components/Camera.cpp"
+#include "../Components/Sprite.cpp"
+#include "../Components/Position.cpp"
 #include<ncurses.h>
 
 

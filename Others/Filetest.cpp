@@ -1,8 +1,8 @@
 #include<map>
 #include<iostream>
 #include <fstream>
-#include "Component.cpp"
-#include "Velocity.cpp"
+#include "../Components/Component.cpp"
+#include "../Components/Velocity.cpp"
 #include "Entity.cpp"
 #include "CreatePlayer.cpp"
 #include<list>

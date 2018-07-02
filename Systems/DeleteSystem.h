@@ -1,9 +1,9 @@
 #ifndef _DELETESYSTEM_H
 #define _DELETESYSTEM_H
-#include "Engine.h" 
+#include "../Entity/Engine.h" 
 //#include "System.cpp"
-#include "Sprite.cpp"
-#include "Position.cpp"
+#include "../Components/Sprite.cpp"
+#include "../Components/Position.cpp"
 #include<ncurses.h>
 
 

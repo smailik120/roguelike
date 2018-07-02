@@ -1,11 +1,11 @@
 #ifndef _INPUTSYSTEM_CPP
 #define _INPUTSYSTEM_CPP
-#include "Position.cpp"
-#include "Velocity.cpp"
+#include "../Components/Position.cpp"
+#include "../Components/Velocity.cpp"
 #include<list>
-#include "Engine.h"
+#include "../Entity/Engine.h"
 #include "System.cpp"
-#include "Entity.h"
+#include "../Entity/Entity.h"
 #include<ncurses.h>
 #include <iostream>
 

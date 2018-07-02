@@ -33,6 +33,8 @@
         "streambuf": "cpp",
         "system_error": "cpp",
         "type_traits": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "cmath": "cpp",
+        "numeric": "cpp"
     }
 }

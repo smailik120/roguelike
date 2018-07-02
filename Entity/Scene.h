@@ -1,7 +1,7 @@
 #ifndef _SCENE_H
 #define _SCENE_H
 #include "Entity.h"
-#include "SystemManager.cpp"
+#include "../Systems/SystemManager.cpp"
 //#include "MoveSystem.cpp"
 //#include "CameraSystem.cpp"
 #include<list>

@@ -1,7 +1,7 @@
 #include "Collision.h"
-#include "Entity.h"
-#include "Position.cpp"
-#include "Velocity.cpp"
+#include "../Entity/Entity.h"
+#include "../Components/Position.cpp"
+#include "../Components/Velocity.cpp"
 #ifndef _COLLISIONPLAYERBRICK_CPP
 #define _COLLISIONPLAYERBRICK_CPP
 class CollisionPlayerBrick:public Collision

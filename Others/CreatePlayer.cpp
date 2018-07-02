@@ -1,8 +1,8 @@
 #include "Create.h"
 #include "Entity.h"
-#include "Position.cpp"
-#include "Velocity.cpp"
-#include "Sprite.cpp"
+#include "Components/Position.cpp"
+#include "Components/Velocity.cpp"
+#include "Components/Sprite.cpp"
 #include<list>
 #ifndef _COLLISIONPLAYERBRICK_CPP
 #define _COLLISIONPLAYERBRICK_CPP

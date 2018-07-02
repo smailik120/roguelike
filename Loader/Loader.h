@@ -1,16 +1,16 @@
 #ifndef _LOADER_H
 #define _LOADER_H 
 #include "Scene.h"
-#include "Position.cpp"
-#include "Sprite.cpp"
-#include "CameraSystem.h"
-#include "MoveSystem.h"
-#include "InputSystem.h"
-#include "SystemManager.cpp"
+#include "../Components/Position.cpp"
+#include "../Components/Sprite.cpp"
+#include "../Systems/CameraSystem.h"
+#include "../Systems/MoveSystem.h"
+#include "../Systems/InputSystem.h"
+#include "../Systems/SystemManager.cpp"
 
 //#include<iostream>
 //#include<list>
-#include "Velocity.cpp"
+#include "../Components/Velocity.cpp"
 //#include<ncurses.h>
 
 class Loader{
