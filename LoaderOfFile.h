@@ -7,6 +7,7 @@
 #include "MoveSystem.h"
 #include "InputSystem.h"
 #include "SystemManager.cpp"
+#include "DeleteSystem.h"
 #include<fstream>
 //#include<iostream>
 //#include<list>

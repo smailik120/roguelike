@@ -20,3 +20,12 @@ using namespace std;
 	{
 		return m[name];
 	}
+	void Entity::dispose(){
+	for (auto it = m.begin(); it != m.end(); ++it)
+  	{
+		delete (*it).second; 
+		
+  	}
+	 
+	   m.clear();
+	}

@@ -10,6 +10,7 @@
 #include "MoveSystem.cpp"
 #include "CameraSystem.cpp"
 #include "InputSystem.cpp"
+#include "DeleteSystem.cpp"
 #include <unistd.h>
 using namespace std;
 
@@ -82,7 +83,7 @@ int main(int argc,char *argv[])
             clear();
             //printw("2");
             //cout<<pos->getX()<<" ";  
-          //  i++; 
+            //i++; 
             
             }
             

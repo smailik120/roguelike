@@ -3,6 +3,7 @@
     MoveSystem::MoveSystem()
     {
         m.insert(pair<pair<string,string>,Collision *>(pair<string,string>("player","brick"),new CollisionPlayerBrick));
+         m.insert(pair<pair<string,string>,Collision *>(pair<string,string>("player","money"),new CollisionPlayerMoney));
         //m.insert(pair<pair<string,string>,Collision *>(pair<string,string>("brick","player"),new CollisionPlayerBrick));
         //cout<<m[pair<string,string>("player","brick")]<<" ";
     }

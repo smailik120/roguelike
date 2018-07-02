@@ -2,6 +2,7 @@
 #define _MOVESYSTEM_CPP
 #include "Collision.h"
 #include "CollisionPlayerBrick.cpp"
+#include "CollisionPlayerMoney.cpp"
 #include<map>
 #include "Position.cpp"
 #include "Velocity.cpp"

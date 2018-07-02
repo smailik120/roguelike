@@ -4,6 +4,7 @@
 #include<cstring>
 #include "Component.cpp"
 #include<iostream>
+#include<iterator>
 using namespace std;
 class Entity{
 	private:
@@ -15,5 +16,6 @@ class Entity{
 	void setName(string name);
 	Component *getComponent(string name);
 	string getName();
+	void dispose();
 };
 #endif

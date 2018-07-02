@@ -45,6 +45,17 @@ Sprite *sprite=new Sprite();
 sprite->setTexture(spriteAll[0]);
 entity.add("sprite",sprite);
 }
+if(s.find("Score")!=-1)
+{
+ 
+string start=s.substr(s.find("Score")+7);
+int scoreEnd=start.find(")");
+string scoreAll=start.substr(0,scoreEnd);
+Score *score=new Score();
+int x = ::strtod(scoreAll.c_str(), 0);
+score->setScore(x);
+entity.add("score",score);
+}
 if(s.find("Name")!=-1)
 {
     string tempName=s.substr(s.find("Name")+6);
@@ -59,7 +70,7 @@ SystemManager & LoaderOfFile::manager(){
     CameraSystem *camera=new CameraSystem;
     systemManager->addSystem(camera,1);
     systemManager->addSystem(move,0);
-  //  systemManager->addSystem(new InputSystem,0);
+    systemManager->addSystem(new DeleteSystem,2);
     return *systemManager;
 }
 
